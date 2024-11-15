@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information Management</title>
+    <style>
+        /* Basic styling for form elements */
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        form { margin-bottom: 20px; }
+        input[type="text"] { margin: 5px 0; padding: 5px; width: 200px; }
+        input[type="submit"] { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h1>Student Information Management System</h1>
+
+    <!-- Message area for feedback -->
+    <div id="message" style="color: red;">
+        <!-- Display messages here if needed (e.g., errors, confirmations) -->
+    </div>
+
+    <h2>Insert Student</h2>
+    <form action="StudentDetailsServlet" method="post">
+        <input type="hidden" name="action" value="insert">
+        ID: <input type="text" name="id" placeholder="Enter Student ID" required><br>
+        Name: <input type="text" name="name" placeholder="Enter Student Name" required><br>
+        Address: <input type="text" name="address" placeholder="Enter Address" required><br>
+        Program: <input type="text" name="program" placeholder="Enter Program" required><br>
+        <input type="submit" value="Insert">
+    </form>
+
+    <h2>Update Student Program</h2>
+    <form action="StudentDetailsServlet" method="post">
+        <input type="hidden" name="action" value="update">
+        ID: <input type="text" name="id" placeholder="Enter Student ID" required><br>
+        New Program: <input type="text" name="program" placeholder="Enter New Program" required><br>
+        <input type="submit" value="Update">
+    </form>
+
+    <h2>Delete Student</h2>
+    <form action="StudentDetailsServlet" method="post">
+        <input type="hidden" name="action" value="delete">
+        ID: <input type="text" name="id" placeholder="Enter Student ID" required><br>
+        <input type="submit" value="Delete">
+    </form>
+
+    <h2>Display All Students</h2>
+    <form action="StudentDetailsServlet" method="get">
+        <input type="submit" value="Display Records">
+    </form>
+</body>
+</html>
